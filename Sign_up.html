@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Account</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url('background.jpg');
+      background-size: cover;
+      backdrop-filter: blur(3px);
+    }
+
+    .signup-container {
+      background-color: #0e6b4f; 
+      border: 3px solid #FFD700;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+      
+    }
+    .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+    .signup-container h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+   
+
+    .signup-form label {
+      
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .signup-form input {
+      
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .signup-form button {
+      background-color: #FFD700;
+      color: #0e6b4f;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .signup-form button:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <img src="logo.png" alt="Military Logo" class="logo" />
+    <h2>Create a New Account</h2>
+    <form class="signup-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="id">ID:</label>
+      <input type="text" id="id" name="id" required>
+      
+      <label for="batch">Batch:</label>
+      <input type="text" id="batch" name="batch" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <p>Already have an account? <a href="login.html">Log in</a></p>
+      
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</body>
+</html>

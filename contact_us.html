@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      .contact-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+   
+
+      .contact-form label {
+        font-weight: bold;
+        margin-top: 10px;
+        color: #0e6b4f;
+      }
+    
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .contact-form button {
+        background-color: #0e6b4f;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .contact-form button:hover {
+        background-color: #075037; /* Darker green on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+
+      <div class="contact-form">
+        <h3>For Query Purpose</h3>
+        <form>
+          <label for="queryName">Name:</label>
+          <input type="text" id="queryName" name="queryName" required />
+
+          <label for="queryPhone">Phone Number:</label>
+          <input type="tel" id="queryPhone" name="queryPhone" required />
+
+          <label for="queryEmail">Email:</label>
+          <input type="email" id="queryEmail" name="queryEmail" required />
+
+          <label for="queryMessage">Message:</label>
+          <textarea
+            id="queryMessage"
+            name="queryMessage"
+            rows="4"
+            required
+          ></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div class="contact-form">
+        <h3>For Recruitment Purpose</h3>
+        <form>
+          <label for="recruitmentName">Name:</label>
+          <input
+            type="text"
+            id="recruitmentName"
+            name="recruitmentName"
+            required
+          />
+
+          <label for="recruitmentPhone">Phone Number:</label>
+          <input
+            type="tel"
+            id="recruitmentPhone"
+            name="recruitmentPhone"
+            required
+          />
+
+          <label for="recruitmentEmail">Email:</label>
+          <input
+            type="email"
+            id="recruitmentEmail"
+            name="recruitmentEmail"
+            required
+          />
+
+          <label for="recruitmentMessage">Message:</label>
+          <textarea
+            id="recruitmentMessage"
+            name="recruitmentMessage"
+            rows="4"
+            required
+          ></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

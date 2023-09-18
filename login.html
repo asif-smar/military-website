@@ -27,6 +27,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             padding: 20px;
             text-align: center;
+            width: 400px;
         }
         
         .logo {
@@ -78,7 +79,7 @@
     <div class="login-container">
       <img src="logo.png" alt="Military Logo" class="logo" />
       <h2>Military Login</h2>
-      <form>
+      <form id="login-form">
         <label for="ID">User ID:</label>
         <input type="text" id="ID" name="ID" required />
 
@@ -89,5 +90,36 @@
         <p style="color: white;">Don't have an account? <a href="Sign_up.html">Create a new account</a></p>
       </form>
     </div>
+
+
+
+    <script>
+      // JavaScript code for form validation
+      document.addEventListener("DOMContentLoaded", function () {
+          const loginForm = document.getElementById("login-form");
+          loginForm.addEventListener("submit", function (e) {
+              e.preventDefault(); // Prevent the form from submitting by default
+
+              // Get the user input
+              const userID = document.getElementById("ID").value;
+              const password = document.getElementById("password").value;
+
+              // Basic validation - you can add more validation rules
+              if (userID.trim() === "" || password.trim() === "") {
+                  alert("User ID and Password are required fields.");
+              } else {
+                  // You can perform an AJAX request or other actions here for actual login
+                  alert("Login successful!");
+              }
+          });
+      });
+  </script>
+
+
+
+
+
+
+
   </body>
 </html>

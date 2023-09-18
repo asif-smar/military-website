@@ -26,6 +26,7 @@
       padding: 20px;
       text-align: center;
       color: #fff;
+      width: 400px;
       
     }
     .logo {
@@ -79,7 +80,7 @@
   <div class="signup-container">
     <img src="logo.png" alt="Military Logo" class="logo" />
     <h2>Create a New Account</h2>
-    <form class="signup-form">
+    <form class="signup-form" id="signup-form">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
       
@@ -96,5 +97,40 @@
       <button type="submit">Sign Up</button>
     </form>
   </div>
+
+  <script>
+    // JavaScript code for form validation
+    document.addEventListener("DOMContentLoaded", function () {
+      const signupForm = document.getElementById("signup-form");
+      signupForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the form from submitting by default
+
+        // Get the user input
+        const name = document.getElementById("name").value;
+        const id = document.getElementById("id").value;
+        const batch = document.getElementById("batch").value;
+        const password = document.getElementById("password").value;
+
+        // Basic validation - you can add more validation rules
+        if (name.trim() === "" || id.trim() === "" || batch.trim() === "" || password.trim() === "") {
+          alert("All fields are required.");
+        } else {
+          // You can perform an AJAX request or other actions here for actual signup
+          alert("Sign Up successful!");
+          // Optionally, you can redirect to a different page after successful signup
+          // window.location.href = "success.html";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

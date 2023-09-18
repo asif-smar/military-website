@@ -1,99 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gun Request</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-image: url('background.jpg');
-      background-size: cover;
-      backdrop-filter: blur(3px);
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gun Request</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-image: url("background.jpg");
+        background-size: cover;
+        backdrop-filter: blur(3px);
+      }
 
-    .request-container {
-      background-color: #0e6b4f; 
-      border: 3px solid #FFD700;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      max-width: 400px;
-      color: #fff;
-      text-align: center;
-    }
-    .logo {
-            width: 100px;
-            height: auto;
-            margin-bottom: 20px;
-        }
+      .request-container {
+        background-color: #0e6b4f;
+        border: 3px solid #ffd700;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 400px;
+        max-width: 400px;
+        color: #fff;
+        text-align: center;
+      }
+      .logo {
+        width: 100px;
+        height: auto;
+        margin-bottom: 20px;
+      }
 
-
-    .request-form{
+      .request-form {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
-    }
+      }
 
-    .request-form label {
-      font-weight: bold;
-      margin-top: 10px;
-     
-    }
+      .request-form label {
+        font-weight: bold;
+        margin-top: 10px;
+      }
 
-    .request-form input,
-    .request-form textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+      .request-form input,
+      .request-form textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
 
-    .request-form button {
-        background-color: #FFD700;
-      color: #0e6b4f;
-      border: none;
-      padding: 10px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+      .request-form button {
+        background-color: #ffd700;
+        color: #0e6b4f;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-    .request-form button:hover {
-      background-color: #0056b3;
-      color: white;
-    }
-  </style>
-</head>
-<body>
-  <div class="request-container">
-    <img src="logo.png" alt="Military Logo" class="logo" />
-    <h2>Request for Guns</h2>
-    <form class="request-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="id">ID:</label>
-      <input type="text" id="id" name="id" required>
-      
-      <label for="batch">Batch:</label>
-      <input type="text" id="batch" name="batch" required>
-      
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-      
-      <label for="message">Request Details:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      
-      <button type="submit">Submit Request</button>
-    </form>
-  </div>
-</body>
-</html>
+      .request-form button:hover {
+        background-color: #0056b3;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="request-container">
+      <img src="logo.png" alt="Military Logo" class="logo" />
+      <h2>Request for Guns</h2>
+      <form class="request-form" id="request-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+  
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required />
+  
+        <label for="batch">Batch:</label>
+        <input type="text" id="batch" name="batch" required />
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+  
+        <label for="message">Request Details:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+  
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+  
+    <script>
+      // JavaScript code for form validation
+      document.addEventListener("DOMContentLoaded", function () {
+        const requestForm = document.getElementById("request-form");
+        requestForm.addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent the form from submitting by default
+  
+          // Get the user input
+          const name = document.getElementById("name").value;
+          const id = document.getElementById("id").value;
+          const batch = document.getElementById("batch").value;
+          const password = document.getElementById("password").value;
+          const message = document.getElementById("message").value;
+  
+          // Basic validation - you can add more validation rules
+          if (name.trim() === "" || id.trim() === "" || batch.trim() === "" || password.trim() === "" || message.trim() === "") {
+            alert("All fields are required.");
+          } else {
+            // You can perform an AJAX request or other actions here for submitting the request
+            alert("Request submitted successfully!");
+            // Optionally, you can redirect to a different page after successful submission
+            // window.location.href = "success.html";
+          }
+        });
+      });
+    </script>
+  </body>
+  </html>
+  
+  
+  
